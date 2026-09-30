@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
 # Create your views here.
 class CustomUser(AbstractUser):
 
-    phone=models.BigIntegerField()
+    phone=models.BigIntegerField(null=True)
 
 
 
