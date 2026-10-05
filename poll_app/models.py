@@ -33,3 +33,6 @@ class Vote(models.Model):
     choice_object=models.ForeignKey(Choice,on_delete=models.CASCADE,related_name='votes')
     owner_object=models.ForeignKey(CustomUser,on_delete=models.CASCADE,related_name='votes')
     created_at=models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together=('poll_object','owner_object')
